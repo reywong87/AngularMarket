@@ -1,0 +1,6 @@
+.my-text-white{
+  @apply text-white;
+}
+.my-bg-gray-700{
+  @apply bg-gray-700;
+}

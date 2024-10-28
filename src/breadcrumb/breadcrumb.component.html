@@ -1,0 +1,21 @@
+<nav aria-label="Breadcrumb" class="flex max-w-screen-xl px-4 mx-auto 2xl:px-0 mt-8">
+  <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+    @for (breadcrumb of breadcrumbs$ | async; track breadcrumb; let last = $last){
+      <li>
+        <div class="flex items-center">
+          @if(last){
+            <span class="text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-white md:ms-2">{{breadcrumb.label}}</span>
+          } @else {
+            <a [routerLink]="breadcrumb.url" class="ms-1 mr-2 text-sm font-medium text-gray-700 hover:text-primary-600 dark:text-gray-400 dark:hover:text-white md:ms-2">{{breadcrumb.label}}</a>
+          }
+          @if(!last){
+            <svg class="h-5 w-5 text-gray-400 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7" />
+            </svg>
+          }
+        </div>
+      </li>
+    }
+  </ol>
+</nav>
+

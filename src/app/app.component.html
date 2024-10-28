@@ -1,0 +1,10 @@
+<div class="min-h-screen flex flex-col dark:bg-gray-900">
+  <app-header></app-header>
+  <main class="flex-grow">
+    @if(!isHome){
+      <app-breadcrumb></app-breadcrumb>
+    }
+    <router-outlet/>
+  </main>
+  <app-footer></app-footer>
+</div>
