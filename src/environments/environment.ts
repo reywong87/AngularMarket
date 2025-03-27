@@ -1,4 +1,4 @@
 export const environment = {
   API_URL: "https://fakestoreapi.com",
-  BLOG_URL: "https://jsonplaceholder.org"
+  BLOG_URL: "https://dummyjson.com"
 };

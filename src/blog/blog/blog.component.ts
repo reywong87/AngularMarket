@@ -19,23 +19,22 @@ export class BlogComponent implements OnInit
   public posts = signal<IPost[]>([]);
   public blogService = inject(BlogService);
 
-
   public visiblePost = computed(() =>
   {
     const startIndex = (this.currentPage() - 1) * this.POSTS_PER_PAGE;
     return this.posts().slice(startIndex, startIndex + this.POSTS_PER_PAGE);
-  })
+  });
 
   ngOnInit(): void
   {
     this.blogService.GetPosts().subscribe(data =>
       {
-      this.posts.set(data);
-      console.log(this.posts())
-    });
+        this.posts.set(data);
+        console.log(this.posts())
+      });
       
   }
-
+  
   nextPage()
   {
     const totalPage = Math.ceil(this.posts().length / this.POSTS_PER_PAGE);

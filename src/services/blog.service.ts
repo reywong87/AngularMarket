@@ -3,6 +3,13 @@ import {BaseHttpService} from "./base-http.service";
 import {IPost} from "../interfaces/i-post";
 import {catchError, map, Observable, of} from "rxjs";
 
+interface ApiResponse {
+  posts: IPost[];
+  total: number;
+  skip: number;
+  limit: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,10 +23,10 @@ export class BlogService extends BaseHttpService
       return of (this._cachePosts);
     }
     else{
-      return this.http.get<IPost[]>(this.blogUrl + "/posts").pipe(
-        map(posts => {
-          this._cachePosts = posts;
-          return posts
+      return this.http.get<ApiResponse>(this.blogUrl + "/posts").pipe(
+        map(response => {
+          this._cachePosts = response.posts;
+          return response.posts
         }),
         catchError((error: any) => {
           console.error('Error fetching posts:', error);
@@ -34,12 +41,12 @@ export class BlogService extends BaseHttpService
     return this.http.get<IPost>(this.blogUrl + "/posts/" + id);
   } */
 
-  GetPost(slug: string): Observable<IPost | null>
+  GetPost(title: string): Observable<IPost | null>
   {
 
     return this.GetPosts().pipe(
       map(posts => {
-        return posts.find(p => p.slug === slug) || null;
+        return posts.find(p => p.title === title) || null;
       }),
       catchError((error: any) => {
         console.error('Error fetching posts:', error);
