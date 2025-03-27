@@ -6,15 +6,14 @@ import {IProductItemCart} from "../../interfaces/Product";
 import {CurrencyPipe} from "@angular/common";
 
 @Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [
-    CartItemComponent,
-    RouterLink,
-    CurrencyPipe
-  ],
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+    selector: 'app-cart',
+    imports: [
+        CartItemComponent,
+        RouterLink,
+        CurrencyPipe
+    ],
+    templateUrl: './cart.component.html',
+    styleUrl: './cart.component.css'
 })
 export class CartComponent {
   state = inject(CartStateService).state;

@@ -4,14 +4,13 @@ import {NgStyle} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 @Component({
-  selector: 'app-blog-item',
-  standalone: true,
-  imports: [
-    NgStyle,
-    RouterLink
-  ],
-  templateUrl: './blog-item.component.html',
-  styleUrl: './blog-item.component.css'
+    selector: 'app-blog-item',
+    imports: [
+        NgStyle,
+        RouterLink
+    ],
+    templateUrl: './blog-item.component.html',
+    styleUrl: './blog-item.component.css'
 })
 export class BlogItemComponent {
   post = input.required<IPost>();

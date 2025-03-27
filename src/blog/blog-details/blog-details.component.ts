@@ -3,11 +3,10 @@ import { BlogService } from '../../services/blog.service';
 import { IPost } from '../../interfaces/i-post';
 
 @Component({
-  selector: 'app-blog-details',
-  standalone: true,
-  imports: [],
-  templateUrl: './blog-details.component.html',
-  styleUrl: './blog-details.component.css'
+    selector: 'app-blog-details',
+    imports: [],
+    templateUrl: './blog-details.component.html',
+    styleUrl: './blog-details.component.css'
 })
 export class BlogDetailsComponent implements OnInit{
   

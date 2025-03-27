@@ -4,14 +4,13 @@ import {CurrencyPipe} from "@angular/common";
 import {RouterLink} from "@angular/router";
 
 @Component({
-  selector: 'app-cart-item',
-  standalone: true,
-  imports: [
-    CurrencyPipe,
-    RouterLink
-  ],
-  templateUrl: './cart-item.component.html',
-  styleUrl: './cart-item.component.css'
+    selector: 'app-cart-item',
+    imports: [
+        CurrencyPipe,
+        RouterLink
+    ],
+    templateUrl: './cart-item.component.html',
+    styleUrl: './cart-item.component.css'
 })
 export class CartItemComponent {
   productCartItem = input.required<IProductItemCart>();

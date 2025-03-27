@@ -3,12 +3,11 @@ import {initFlowbite} from "flowbite";
 import {CategoriesStateService} from "../services/categories-state.service";
 
 @Component({
-  selector: 'app-filter',
-  standalone: true,
-  imports: [],
-  templateUrl: './filter.component.html',
-  styleUrl: './filter.component.css',
-  providers: []
+    selector: 'app-filter',
+    imports: [],
+    templateUrl: './filter.component.html',
+    styleUrl: './filter.component.css',
+    providers: []
 })
 export class FilterComponent implements OnInit {
 

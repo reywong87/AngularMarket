@@ -6,12 +6,11 @@ import {CartStateService} from "../services/cart-state.service";
 import {Observable} from "rxjs";
 
 @Component({
-  selector: 'app-product-details',
-  standalone: true,
-  imports: [],
-  templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css',
-  providers: [ProductService, ProductDetailStateService]
+    selector: 'app-product-details',
+    imports: [],
+    templateUrl: './product-details.component.html',
+    styleUrl: './product-details.component.css',
+    providers: [ProductService, ProductDetailStateService]
 })
 export class ProductDetailsComponent {
 

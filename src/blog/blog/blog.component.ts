@@ -4,13 +4,12 @@ import {BlogService} from "../../services/blog.service";
 import {IPost} from "../../interfaces/i-post";
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [
-    BlogItemComponent
-  ],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.css'
+    selector: 'app-blog',
+    imports: [
+        BlogItemComponent
+    ],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.css'
 })
 export class BlogComponent implements OnInit
 {

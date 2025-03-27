@@ -10,11 +10,10 @@ import {Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HomeComponent, HeaderComponent, FooterComponent, BreadcrumbComponent, AsyncPipe],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [RouterOutlet, HomeComponent, HeaderComponent, FooterComponent, BreadcrumbComponent, AsyncPipe],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
   title = 'AngularMarket';

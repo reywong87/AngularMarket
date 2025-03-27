@@ -5,16 +5,15 @@ import {RouterLink} from "@angular/router";
 
 
 @Component({
-  selector: 'app-product-item',
-  standalone: true,
-  imports: [
-    CurrencyPipe,
-    DecimalPipe,
-    RouterLink
-  ],
-  templateUrl: './product-item.component.html',
-  styleUrl: './product-item.component.css',
-  providers: []
+    selector: 'app-product-item',
+    imports: [
+        CurrencyPipe,
+        DecimalPipe,
+        RouterLink
+    ],
+    templateUrl: './product-item.component.html',
+    styleUrl: './product-item.component.css',
+    providers: []
 })
 export class ProductItemComponent implements OnInit {
   //@Input() product!: Product;

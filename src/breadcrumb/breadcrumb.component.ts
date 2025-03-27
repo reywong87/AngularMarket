@@ -5,14 +5,13 @@ import {Observable} from "rxjs";
 import {AsyncPipe} from "@angular/common";
 
 @Component({
-  selector: 'app-breadcrumb',
-  templateUrl: './breadcrumb.component.html',
-  standalone: true,
-  imports: [
-    RouterLink,
-    AsyncPipe
-  ],
-  styleUrls: ['./breadcrumb.component.css']
+    selector: 'app-breadcrumb',
+    templateUrl: './breadcrumb.component.html',
+    imports: [
+        RouterLink,
+        AsyncPipe
+    ],
+    styleUrls: ['./breadcrumb.component.css']
 })
 export class BreadcrumbComponent{
   breadcrumbs$: Observable<Breadcrumb[]>;

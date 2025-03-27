@@ -7,15 +7,14 @@ import {CartStateService} from "../services/cart-state.service";
 import {Product} from "../interfaces/Product";
 
 @Component({
-  selector: 'app-product-list',
-  standalone: true,
-  imports: [
-    ProductItemComponent,
-    CategoryFilterPipe,
-  ],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css',
-  providers: []
+    selector: 'app-product-list',
+    imports: [
+        ProductItemComponent,
+        CategoryFilterPipe,
+    ],
+    templateUrl: './product-list.component.html',
+    styleUrl: './product-list.component.css',
+    providers: []
 })
 export class ProductListComponent {
   productState = inject(ProductStateService);
