@@ -42,7 +42,7 @@ export const routes: Routes = [
     component: BlogComponent, data: { breadcrumb: 'Blog' }
   },
   {
-    path: 'blog/:post_slug',
+    path: 'blog/blog-post/:id',
     component: BlogDetailsComponent, data: { breadcrumb: 'Blog Details' }
   }
 ];

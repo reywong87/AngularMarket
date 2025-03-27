@@ -14,7 +14,7 @@ export class BlogDetailsComponent implements OnInit{
 
   public post = signal<IPost | null>(null);
 
-  public post_title = input.required<string>();
+  public id = input.required<string>();
 
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class BlogDetailsComponent implements OnInit{
   }
   
     private loadPost(): void {
-      this._blogService.GetPost(this.post_title()).subscribe(data => {
+      this._blogService.GetPost(this.id()).subscribe(data => {
         this.post.set(data);
         console.log(this.post);
       });

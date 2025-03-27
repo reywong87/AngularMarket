@@ -41,12 +41,12 @@ export class BlogService extends BaseHttpService
     return this.http.get<IPost>(this.blogUrl + "/posts/" + id);
   } */
 
-  GetPost(title: string): Observable<IPost | null>
+  GetPost(id: string): Observable<IPost | null>
   {
 
     return this.GetPosts().pipe(
       map(posts => {
-        return posts.find(p => p.title === title) || null;
+        return posts.find(p => p.id.toString() === id) || null;
       }),
       catchError((error: any) => {
         console.error('Error fetching posts:', error);
