@@ -15,10 +15,10 @@ export class BlogItemComponent implements OnInit {
     public imageUrl = signal("");
         
     ngOnInit(): void {
-        this.imageUrl.set(`https://picsum.photos/id/${this.getRandomNumber()}/400`)
+        this.imageUrl.set(`https://picsum.photos/id/${this.getImageId()}/400`);
     }
     
-    getRandomNumber(): string{
+    getImageId(): string{
         let id = this.post().id
         let result = 155 + id
         return result.toString();

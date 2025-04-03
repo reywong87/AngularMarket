@@ -1,4 +1,4 @@
-import { Component, inject, input, OnInit } from '@angular/core';
+import {Component, inject, input, OnInit, signal} from '@angular/core';
 import { BlogService } from '../../services/blog.service';
 
 @Component({
@@ -16,10 +16,12 @@ export class BlogDetailsComponent implements OnInit{
   public id = input.required<string>();
   
   public postRs = this._blogService.GetSinglePostRs(this.id);
+  public imageUrl = signal("");
 
 
   ngOnInit(): void {
     //this.loadPost();
+      this.imageUrl.set(`https://picsum.photos/id/${this.getImageId()}/400/200`);
   }
   
    /* private loadPost(): void {
@@ -28,5 +30,11 @@ export class BlogDetailsComponent implements OnInit{
         console.log(this.post);
       });
     }*/
+
+    getImageId(): string{
+        let id = parseInt(this.id());
+        let result = 155 + id
+        return result.toString();
+    }
 
 }

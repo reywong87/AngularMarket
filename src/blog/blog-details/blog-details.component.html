@@ -1,11 +1,11 @@
 <section class="bg-white dark:bg-gray-900">
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-    <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
+    <div class="mx-auto max-w-screen-sm text-center mb-8">
       <h2 class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">{{ postRs.value()?.title }}</h2>
       <!--<p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">{{ post()?.publishedAt}}</p>-->
     </div>
     <div class="mx-auto max-w-screen-sm">
-      <!--<img class="w-full h-auto rounded-lg" [src]="post()?.image" alt="{{ post()?.title }}">-->
+      <img class="w-full h-auto rounded-lg" [src]="imageUrl()" alt="{{ postRs.value()?.title }}">
     </div>
     <div class="mx-auto max-w-screen-sm mt-8">
       <p class="text-gray-700 dark:text-gray-400">{{ postRs.value()?.body }}</p>
