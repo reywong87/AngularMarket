@@ -1,6 +1,5 @@
-import { Component, effect, inject, input, OnInit, signal } from '@angular/core';
+import { Component, inject, input, OnInit } from '@angular/core';
 import { BlogService } from '../../services/blog.service';
-import { IPost } from '../../interfaces/i-post';
 
 @Component({
     selector: 'app-blog-details',
@@ -12,20 +11,22 @@ export class BlogDetailsComponent implements OnInit{
   
   private _blogService = inject(BlogService);
 
-  public post = signal<IPost | null>(null);
+  //public post = signal<IPost | null>(null);
 
   public id = input.required<string>();
+  
+  public postRs = this._blogService.GetSinglePostRs(this.id);
 
 
   ngOnInit(): void {
-    this.loadPost();
+    //this.loadPost();
   }
   
-    private loadPost(): void {
+   /* private loadPost(): void {
       this._blogService.GetPost(this.id()).subscribe(data => {
         this.post.set(data);
         console.log(this.post);
       });
-    }
+    }*/
 
 }

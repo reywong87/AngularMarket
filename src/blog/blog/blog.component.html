@@ -18,7 +18,7 @@
           Showing
           <span class="font-semibold text-gray-900 dark:text-white">{{currentPage()}}</span> to
           <span class="font-semibold text-gray-900 dark:text-white">{{POSTS_PER_PAGE}}</span> of
-          <span class="font-semibold text-gray-900 dark:text-white">{{posts().length}}</span> Entries
+          <span class="font-semibold text-gray-900 dark:text-white">{{postsRs().length}}</span> Entries
         </span>
       <div class="inline-flex mt-2 xs:mt-0">
         <!-- Buttons -->
@@ -35,7 +35,7 @@
         </button>
         <button
           class="flex items-center justify-center px-3 h-8 text-sm font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white disabled:opacity-50"
-          [disabled]="currentPage() === Math.ceil(posts().length / POSTS_PER_PAGE)"
+          [disabled]="currentPage() === Math.ceil(postsRs().length / POSTS_PER_PAGE)"
           (click)="nextPage()">
           Next
           <svg aria-hidden="true" class="w-3.5 h-3.5 ms-2 rtl:rotate-180" fill="none"
