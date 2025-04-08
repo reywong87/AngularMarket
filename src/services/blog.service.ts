@@ -2,6 +2,7 @@ import {computed, Injectable, Signal} from '@angular/core';
 import {BaseHttpService} from "./base-http.service";
 import {IPost} from "../interfaces/i-post";
 import {httpResource} from "@angular/common/http";
+import {IUser} from "../interfaces/i-user";
 
 interface ApiResponse {
     posts: IPost[];
@@ -66,6 +67,12 @@ export class BlogService extends BaseHttpService {
     GetSinglePostRs(id: Signal<string>) {
         return httpResource<IPost | undefined>(() => ({
             url: this.blogUrl + "/posts/" + id(),
+        }));
+    }
+    
+    GetUser(id: string){
+        return httpResource<IUser | undefined>(() => ({
+            url: this.blogUrl + "/users/" + id,
         }));
     }
 
